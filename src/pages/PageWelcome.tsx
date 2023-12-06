@@ -1,5 +1,9 @@
+import * as tools from '../tools';
+
 export const PageWelcome = () => {
+
+	const message = 'this is the welcome page';
 	return (
-		<p>This is the welcome page.</p>
+		<p>{tools.capitalizeFirstLetter(message)}</p>
 	)
 }
