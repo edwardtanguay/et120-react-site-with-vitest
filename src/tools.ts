@@ -35,7 +35,7 @@ export const sentencize = (text: string) => {
 		r = r.slice(0, -1);
 	}
 	if (!".!?".includes(text.slice(-1))) {
-		r += ".";
+		r += "!";
 	}
 
 	if (tempFirstLetter !== "") {
