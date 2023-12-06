@@ -4,6 +4,6 @@ export const PageWelcome = () => {
 
 	const message = 'this is the welcome page';
 	return (
-		<p>{tools.capitalizeFirstLetter(message)}</p>
+		<p>{tools.sentencize(message)}</p>
 	)
 }
