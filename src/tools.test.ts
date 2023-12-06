@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { capitalizeFirstLetter } from "./tools";
+import { capitalizeFirstLetter, sentencize } from "./tools";
 
 describe("capitalizeFirstLetter", () => {
 	it("uppercases and lowercases correct letters", () => {
@@ -19,5 +19,38 @@ describe("capitalizeFirstLetter", () => {
 		expect(capitalizeFirstLetter("ÄÄÄÄ")).toBe("Ääää");
 		expect(capitalizeFirstLetter("ÖÖÖÖ")).toBe("Öööö");
 		expect(capitalizeFirstLetter("ÜÜÜÜ")).toBe("Üüüü");
+	});
+});
+
+describe("sentencize", () => {
+	it("handles no capital and no punctuation mark", () => {
+		expect(sentencize("this is a text")).toBe("This is a text.");
+		expect(sentencize("hello")).toBe("Hello.");
+	});
+	it("handles no capital and punctuation mark", () => {
+		expect(sentencize("hello!")).toBe("Hello!");
+		expect(sentencize("hello?")).toBe("Hello?");
+	});
+	it("handles no capital and bad punctuation mark", () => {
+		expect(sentencize("hello,")).toBe("Hello.");
+		expect(sentencize("hello:")).toBe("Hello.");
+		expect(sentencize("hello;")).toBe("Hello.");
+		expect(sentencize("hello/")).toBe("Hello/.");
+	});
+	it("handles capital", () => {
+		expect(sentencize("Hello")).toBe("Hello.");
+		expect(sentencize("Hello///")).toBe("Hello///.");
+		expect(sentencize("This is a test.")).toBe("This is a test.");
+		expect(sentencize("AAA")).toBe("Aaa.");
+	});
+	it("handles task examples", () => {
+		expect(sentencize("who was it?")).toBe("Who was it?");
+		expect(sentencize("i")).toBe("I.");
+		expect(sentencize("how many?")).toBe("How many?");
+		expect(sentencize("23")).toBe("23.");
+	});
+	it("handles Spanish question", () => {
+		expect(sentencize("¿por qué?")).toBe("¿Por qué?");
+		expect(sentencize("¡por qué!")).toBe("¡Por qué!");
 	});
 });
