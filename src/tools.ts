@@ -6,5 +6,10 @@
  * "This is a test"
  */
 export const capitalizeFirstLetter = (text: string) => {
-	return text.slice(0, 1).toUpperCase() + text.slice(1);
+	let r = text;
+	r = r.trim();
+	r = r.slice(0, 1).toUpperCase() + r.slice(1).toLowerCase();
+	return r;
+	//charAt(0)
+	//splice
 }
