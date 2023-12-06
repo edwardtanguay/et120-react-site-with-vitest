@@ -9,7 +9,8 @@
 		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview",
 		"pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
-		"test": "vitest --ui"
+		"test": "vitest --ui",
+		"testcov": "vitest --coverage"
 	},
 	"dependencies": {
 		"dayjs": "^1.11.10",
@@ -24,6 +25,7 @@
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
 		"@vitejs/plugin-react": "^4.0.3",
+		"@vitest/coverage-v8": "^1.0.1",
 		"@vitest/ui": "^1.0.1",
 		"autoprefixer": "^10.4.16",
 		"eslint": "^8.45.0",

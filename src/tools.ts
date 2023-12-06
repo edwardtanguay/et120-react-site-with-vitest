@@ -1,8 +1,8 @@
 /**
  * capitalizeFirstLetter()
- * 
+ *
  * capitalizeFirstLetter('this is a test')
- * 
+ *
  * "This is a test"
  */
 export const capitalizeFirstLetter = (text: string) => {
@@ -12,4 +12,8 @@ export const capitalizeFirstLetter = (text: string) => {
 	return r;
 	//charAt(0)
 	//splice
-}
+};
+
+export const sentencize = (text: string) => {
+	return "nnn";
+};
